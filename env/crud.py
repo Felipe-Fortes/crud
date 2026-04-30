@@ -19,7 +19,7 @@ def main():
         acoes = cursor.fetchall()
         for acao in acoes:
             print(acao)
-        return acao
+        return acoes
     
     #Update
     def update_acoes(ticker, novo_preco):
@@ -34,3 +34,23 @@ def main():
         cursor.execute(cmd_delete)
         connection.commit()
         print("Os dados foram deletados!")
+
+    #Exemplos de uso
+
+    #insert
+    #insert_acoes("PETR4", "Petrobras", "Petróleo", 28.50, "2024-06-01")
+
+    #read
+    #read_acoes()
+
+    #update
+    #update_acoes("PETR4", 30.00)
+
+    #delete
+    #delete_acoes("PETR4")
+
+    #desconectar do banco de dados
+    disconnect(connection)
+
+if __name__ == "__main__":
+    main()
