@@ -23,7 +23,7 @@ def main():
     
     #Update
     def update_acoes(ticker, novo_preco):
-        cmd_update = "UPDATE acoes_b3 SET preco = {novo_preco} WHERE ticker = '{ticker}';"
+        cmd_update = f"UPDATE acoes_b3 SET preco = {novo_preco} WHERE ticker = '{ticker}';"
         cursor.execute(cmd_update)
         connection.commit()
         print("Os dados foram atualizados!")
