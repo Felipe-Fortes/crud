@@ -11,3 +11,26 @@ def main():
         cursor.execute(cmd_insert, values)
         connection.commit()
         print("Os dados foram inseridos!")
+
+    #Read
+    def read_acoes():
+        cmd_select = "SELECT ticker, nome_empresa, setor, preco, data_cotacao FROM acoes_b3;"
+        cursor.execute(cmd_select)
+        acoes = cursor.fetchall()
+        for acao in acoes:
+            print(acao)
+        return acao
+    
+    #Update
+    def update_acoes(ticker, novo_preco):
+        cmd_update = "UPDATE acoes_b3 SET preco = {novo_preco} WHERE ticker = '{ticker}';"
+        cursor.execute(cmd_update)
+        connection.commit()
+        print("Os dados foram atualizados!")
+
+    #Delete
+    def delete_acoes(ticker):
+        cmd_delete = f"DELETE FROM acoes_b3 WHERE ticker = '{ticker}';"
+        cursor.execute(cmd_delete)
+        connection.commit()
+        print("Os dados foram deletados!")
