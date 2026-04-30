@@ -40,6 +40,14 @@ def main():
     #insert
     #insert_acoes("PETR4", "Petrobras", "Petróleo", 28.50, "2024-06-01")
 
+    ticker = input("Ticker da ação: ")
+    empresa = input("Nome da empresa: ")
+    setor = input("Setor: ")
+    preco = float(input("Preço: "))
+    data_cotacao = input("Data da cotação (YYYY-MM-DD): ")
+
+    insert_acoes(ticker, empresa, setor, preco, data_cotacao)
+
     #read
     #read_acoes()
 
